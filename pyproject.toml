@@ -1,0 +1,52 @@
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "verbumai"
+version = "1.0.0"
+description = "RAG semântico sobre a Bíblia: encontre passagens por tema, sem inventar nada"
+authors = ["Igor Nascimento <trabalho.computador.sjn@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+
+packages = [{ include = "verbum" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+chromadb = ">=0.4.0"
+sentence-transformers = ">=2.2.0"
+anthropic = ">=0.25.0"
+openai = ">=1.0.0"
+requests = ">=2.31.0"
+tqdm = ">=4.66.0"
+python-dotenv = ">=1.0.0"
+rich = ">=13.0.0"
+typer = ">=0.12.0"
+
+# extras opcionais
+fastapi = { version = ">=0.110.0", optional = true }
+uvicorn = { version = ">=0.29.0", extras = ["standard"], optional = true }
+
+[tool.poetry.extras]
+api = ["fastapi", "uvicorn"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.0"
+ruff = ">=0.4.0"
+mypy = ">=1.9.0"
+
+[tool.poetry.scripts]
+verbum = "verbum.cli.main:app"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
