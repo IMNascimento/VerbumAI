@@ -2,7 +2,6 @@
 
 
 ![Texto alternativo](assets/biblia_1.png)
-![Texto alternativo](assets/biblia_2.png)
 
 > Busca semântica na Bíblia com RAG, encontre passagens por tema, sem inventar nada.
 
