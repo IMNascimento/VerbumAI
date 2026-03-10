@@ -1,5 +1,9 @@
 # 📖 VerbumAI
 
+
+![Texto alternativo](assets/biblia_1.png)
+![Texto alternativo](assets/biblia_2.png)
+
 > Busca semântica na Bíblia com RAG, encontre passagens por tema, sem inventar nada.
 
 **VerbumAI** usa embeddings multilingues e um banco vetorial para encontrar os versículos mais relevantes para qualquer tema, e então usa um LLM para explicar cada passagem de forma fiel ao texto bíblico.
@@ -125,6 +129,12 @@ verbum ask "perdão dos pecados" --provider openai
 verbum ask "amor ao próximo"    --provider ollama
 verbum ask "riqueza e dinheiro" --top-k 12
 ```
+![Utilização do Rag via CLI](assets/biblia_1.png)
+
+Utilização Local gratuita com modelos abertos do Ollama:
+
+![Utilização local do RAG com Ollama zero custo](assets/biblia_2.png)
+
 
 ---
 
@@ -152,6 +162,7 @@ ollama pull llama3.2      # ~2 GB — bom para português
 ollama pull mistral       # ~4 GB — ótimo para análise
 ollama pull phi4          # ~8 GB — excelente qualidade
 ```
+![Utilização via Ollama](assets/biblia_0.png)
 
 ```env
 VERBUM_PROVIDER=ollama
@@ -279,6 +290,8 @@ make serve        # Sobe a API REST
 make clean        # Remove banco vetorial
 make clean-all    # Remove banco vetorial + venv + dados
 ```
+
+
 
 ---
 
